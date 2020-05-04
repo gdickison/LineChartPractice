@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="src/style.css">
     <title>Line Chart Practice</title>
     <script type="text/javascript" src="src/scripts.js"></script>
-    <!-- <script type="text/javascript" src="src/getData.js"></script> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="src/getData.js"></script>
+    <!-- <script>
+        google.charts.load('current', {packages: ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+    </script> -->
     <script type="text/javascript" src="src/d3.js"></script>
     <script type="text/javascript" src="src/chart.js"></script>
     <script type="text/javascript" src="src/googleChart.js"></script>
@@ -25,13 +30,15 @@
 </head>
 <body>
     <h1>Hello Line Chart World</h1>
-    <select name="allCountries" id="allCountries" onchange="createChartJS()">
+    <select name="allCountries" id="allCountries" onchange="getData()">
         <option></option>
     </select>
     <div id="chart-headline"></div>
     <div id="d3-js"></div>
-    <canvas id="chart-js"></canvas>
-    <div id="google-chart"></div>
+    <div class="chart-js">
+        <canvas id="chart-js"></canvas>
+    </div>
+    <div class="google-chart" id="google-chart"></div>
 </body>
 <script type="text/javascript" src="src/placeholders.js"></script>
 </html>

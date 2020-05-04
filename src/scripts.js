@@ -10,9 +10,10 @@ const createOptions = (data) => {
     }
 };
 
-const createChart = () {
-    // set which chart will be drawn
-}
+/* const createCharts = () => {
+    createD3Chart();
+    createChartJS();
+} */
 
 function createHeadline(data){
     const selectedCountry = document.getElementById("allCountries");
@@ -35,19 +36,3 @@ function createHeadline(data){
         headlineContainer.appendChild(dataTableHeadline);
     }
 }
-
-/*********************************************/
-/*********************************************/
-/**************               ****************/
-/*                  CHARTS                   */
-/**************               ****************/
-/*********************************************/
-/*********************************************/
-
-/* **************** */
-/*     Chart JS     */
-/* **************** */
-
-
-
-
