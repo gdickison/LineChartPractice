@@ -10,10 +10,11 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="src/getData.js"></script>
+    <script type="text/javascript" src="src/createChart.js"></script>
     <script type="text/javascript" src="src/d3.js"></script>
     <script type="text/javascript" src="src/chart.js"></script>
     <script type="text/javascript" src="src/googleChart.js"></script>
+    <script type="text/javascript" src="src/drawChartSelectButtons.js"></script>
     <script>
         fetch('https://api.covid19api.com/countries', {cache: "default"})
             .then((response) => {
@@ -26,9 +27,25 @@
 </head>
 <body>
     <h1>Hello Line Chart World</h1>
-    <select name="allCountries" id="allCountries" onchange="getData()">
+    <select name="allCountries" id="allCountries" onchange="createChart()">
         <option></option>
     </select>
+    <div>
+        <ul class="chart-select-buttons" style="display: none">
+            <li>
+                <input type="radio" id="chart-js-radio" name="chart-select">
+                <label for="chart-js-radio">ChartJS</label>
+            </li>
+            <li>
+                <input type="radio" id="google-chart-radio" name="chart-select">
+                <label for="google-chart-radio">Google Charts</label>
+            </li>
+            <li>
+                <input type="radio" id="d3-radio" checked="checked" name="chart-select">
+                <label for="d3-radio">D3</label>
+            </li>
+        </ul>
+    </div>
     <div id="chart-headline"></div>
     <div id="d3-js"></div>
     <div class="chart-js">

@@ -1,4 +1,4 @@
-const getData = () => {
+const createChart = () => {
     const selectedCountry = document.getElementById("allCountries");
     const selectedCountrySlug = selectedCountry.options[selectedCountry.selectedIndex].value;
 
@@ -27,6 +27,7 @@ const getData = () => {
             drawD3Chart(data);
             drawChartJS(data);
             drawGoogleChart(data);
+            drawChartSelectButtons();
         });
 }
 

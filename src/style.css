@@ -4,7 +4,8 @@ body {
 
 /* Make the dropdown look good */
 select {
-    display: block;
+	display: block;
+	float: left;
 	font-size: 14px;
 	font-family: sans-serif;
 	font-weight: 700;
@@ -71,4 +72,65 @@ select {
 .google-chart {
 	height: 500px;
 	width: 960px;
+}
+
+.chart-select-buttons {
+	list-style-type: none;
+	margin: 25px 0 0 0;
+	padding: 0;
+}
+
+.chart-select-buttons li {
+	display: block;
+	float: right;
+	margin: 0 5px 0 0;
+	width: 100px;
+	height: 50px;
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	border-radius: .5em;
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+	background-size: .65em auto, 100%;
+}
+
+.chart-select-buttons label,
+.chart-select-buttons input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+}
+
+.chart-select-buttons input[type="radio"] {
+	opacity: 0.01;
+	z-index: 100;
+}
+
+.chart-select-buttons input[type="radio"]:checked+label,
+.Checked+label {
+	background: #e5e5e5;
+}
+
+.chart-select-buttons label {
+	padding: 5px;
+	border: 1px solid #CCC;
+	border-radius: 0.5em;
+	cursor: pointer;
+	z-index: 90;
+	text-align: center;
+}
+
+.chart-select-buttons label:hover {
+background: #DDD;
+}
+
+#chart-headline {
+	display: block;
+	float: left;
 }
