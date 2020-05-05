@@ -1,11 +1,12 @@
 body {
-    font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
+	margin-left: 200px;
 }
 
 /* Make the dropdown look good */
 select {
 	display: block;
-	float: left;
+	/* float: left; */
 	font-size: 14px;
 	font-family: sans-serif;
 	font-weight: 700;
@@ -127,10 +128,10 @@ select {
 }
 
 .chart-select-buttons label:hover {
-background: #DDD;
+	background: #DDD;
 }
 
-#chart-headline {
+/* #chart-headline {
 	display: block;
 	float: left;
-}
+} */
