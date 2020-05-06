@@ -25,9 +25,7 @@ const createChart = () => {
         .then((responses) => Promise.all(responses.map(data => data.json())))
         .then((data) => {
             data = combineData(data);
-            console.log(data);
             createHeadline(data);
-            console.log(selectedButton);
             document.getElementById("d3-js").style.display = "none";
             document.getElementById("chartjs-chart").style.display = "none";
             document.getElementById("google-chart").style.display = "none";

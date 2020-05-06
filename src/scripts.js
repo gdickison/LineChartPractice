@@ -24,10 +24,12 @@ function createHeadline(data){
     if(data.length === 1){
         dataTableHeadline.innerHTML = selectedCountryName + " has not reported any confirmed cases";
         headlineContainer.appendChild(dataTableHeadline);
+        document.getElementById("chart-select-div").style.display = "none";
     }
 
     else {
         dataTableHeadline.innerHTML = "Total confirmed cases, recoveries, and deaths in " + selectedCountryName + " as of " + new Date().toLocaleDateString();
         headlineContainer.appendChild(dataTableHeadline);
+        document.getElementById("chart-select-div").style.display = "block";
     }
 }

@@ -31,6 +31,10 @@ select {
 	background-size: .65em auto, 100%;
 }
 
+.chart {
+	margin-top: 50px;
+}
+
 .line1 {
     fill: none;
     stroke: blue;
@@ -78,13 +82,13 @@ select {
 
 .chart-select-buttons {
 	list-style-type: none;
-	margin: 25px 0 0 0;
+	margin: 100px 0 0 0;
 	padding: 0;
 }
 
 .chart-select-buttons li {
 	display: block;
-	float: right;
+	float: left;
 	margin: 0 5px 0 0;
 	width: 100px;
 	height: 50px;

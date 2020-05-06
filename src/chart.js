@@ -1,7 +1,8 @@
 const drawChartJS = (data) => {
 
     document.getElementById("chartjs-chart").style.display = "block";
-    console.log('chart js data', data);
+    clearOldChartJs();
+
     const ctx = document.getElementById("chart-js");
 
     // Global options
@@ -107,3 +108,15 @@ const drawChartJS = (data) => {
         }
     });
 };
+
+const clearOldChartJs = () => {
+    let e = document.getElementById("chartjs-chart");
+    let child = e.lastElementChild;
+    while(child){
+        e.removeChild(child);
+        child = e.lastElementChild;
+    }
+    let newCanvas = document.createElement("canvas");
+    newCanvas.id = ("chart-js");
+    e.appendChild(newCanvas);
+}

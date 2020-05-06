@@ -25,7 +25,6 @@ const drawGoogleChart = (data) => {
 
         chartData.addRows(dataArray);
 
-        console.log(dataArray);
         var options = {
             hAxis: {
             title: 'Days Since First Confirmed Case'
