@@ -66,6 +66,7 @@ select {
 }
 
 .chart-js {
+	display: block;
 	height: 500px;
 	width: 960px;
 }

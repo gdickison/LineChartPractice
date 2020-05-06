@@ -1,4 +1,7 @@
 const drawD3Chart = (data) => {
+
+    document.getElementById("d3-js").style.display = "block";
+
     const d3Svg = document.getElementById("d3-js-svg");
     if(d3Svg != null){
         d3Svg.parentNode.removeChild(d3Svg);
@@ -56,7 +59,7 @@ const drawD3Chart = (data) => {
             d3.json('url').then(function(data){
         to get the data from a url
     */
-    createHeadline(data);
+    /* createHeadline(data); */
     if(data.length !== 0){
         data.forEach(function(d){
             d.date = new Date(d.Date);

@@ -1,4 +1,6 @@
 const createChart = () => {
+    const selectedButton = whichButton();
+
     const selectedCountry = document.getElementById("allCountries");
     const selectedCountrySlug = selectedCountry.options[selectedCountry.selectedIndex].value;
 
@@ -24,10 +26,20 @@ const createChart = () => {
         .then((data) => {
             data = combineData(data);
             console.log(data);
-            drawD3Chart(data);
-            drawChartJS(data);
-            drawGoogleChart(data);
-            drawChartSelectButtons();
+            createHeadline(data);
+            console.log(selectedButton);
+            document.getElementById("d3-js").style.display = "none";
+            document.getElementById("chartjs-chart").style.display = "none";
+            document.getElementById("google-chart").style.display = "none";
+            if(selectedButton === "googlechart" && data.length > 1){
+                drawGoogleChart(data);
+            }
+            if(selectedButton === "chartjs" && data.length > 1){
+                drawChartJS(data);
+            }
+            if(selectedButton === "d3chart" && data.length > 1){
+                drawD3Chart(data);
+            }
         });
 }
 
@@ -43,4 +55,15 @@ const combineData = (data) => {
         });
     }
     return newDataJsonArray;
+}
+
+const whichButton = () => {
+    const btns = document.querySelectorAll('input[name="chart-select"]');
+    let checkedButton;
+    for(var btn of btns){
+        if(btn.checked){
+            checkedButton = btn.value;
+        }
+    }
+    return checkedButton;
 }

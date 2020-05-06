@@ -30,25 +30,25 @@
     <select name="allCountries" id="allCountries" onchange="createChart()">
         <option></option>
     </select>
-    <!-- <div>
-        <ul class="chart-select-buttons">
+    <div>
+        <ul class="chart-select-buttons" id="button-options">
             <li>
-                <input type="radio" id="chart-js-radio" name="chart-select">
+                <input type="radio" id="chart-js-radio" name="chart-select" value="chartjs" onclick="whichButton()">
                 <label for="chart-js-radio">ChartJS</label>
             </li>
             <li>
-                <input type="radio" id="google-chart-radio" name="chart-select">
+                <input type="radio" id="google-chart-radio" name="chart-select" value="googlechart" onclick="whichButton()">
                 <label for="google-chart-radio">Google Charts</label>
             </li>
             <li>
-                <input type="radio" id="d3-radio" checked="checked" name="chart-select">
+                <input type="radio" id="d3-radio" name="chart-select" value="d3chart" onclick="whichButton()" checked>
                 <label for="d3-radio">D3</label>
             </li>
         </ul>
-    </div> -->
+    </div>
     <div id="chart-headline"></div>
     <div id="d3-js"></div>
-    <div class="chart-js">
+    <div id="chartjs-chart" class="chart-js">
         <canvas id="chart-js"></canvas>
     </div>
     <div class="google-chart" id="google-chart"></div>

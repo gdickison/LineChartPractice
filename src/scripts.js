@@ -10,11 +10,6 @@ const createOptions = (data) => {
     }
 };
 
-/* const createCharts = () => {
-    createD3Chart();
-    createChartJS();
-} */
-
 function createHeadline(data){
     const selectedCountry = document.getElementById("allCountries");
     const selectedCountryName = selectedCountry.options[selectedCountry.selectedIndex].text.includes('Taiwan')
@@ -26,7 +21,7 @@ function createHeadline(data){
 
     const dataTableHeadline = document.createElement("h3");
 
-    if(data.length === 0){
+    if(data.length === 1){
         dataTableHeadline.innerHTML = selectedCountryName + " has not reported any confirmed cases";
         headlineContainer.appendChild(dataTableHeadline);
     }

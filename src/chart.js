@@ -1,6 +1,8 @@
 const drawChartJS = (data) => {
-    const canvas = document.getElementById("chart-js");
-    const ctx = canvas.getContext('2d');
+
+    document.getElementById("chartjs-chart").style.display = "block";
+    console.log('chart js data', data);
+    const ctx = document.getElementById("chart-js");
 
     // Global options
     Chart.defaults.global.defaultFontColor = "black";
@@ -18,94 +20,90 @@ const drawChartJS = (data) => {
         recoveredData.push(data[i].Recovered);
     }
 
-    const chartJSData = {
-        labels: labels,
-        datasets: [
-            {
-                label: "Confirmed",
-                fill: false,
-                lineTension: 0.1,
-                backgroundColor: "rgba(225,0,0,0.4)",
-                borderColor: "blue",
-                borderCapStyle: "square",
-                borderDash: [],
-                borderDashOffset: 0.0,
-                borderJoinStyle: "miter",
-                pointBorderColor: "blue",
-                pointBackgroundColor: "blue",
-                pointBorderWidth: 1,
-                pointHoverRadius: 8,
-                pointHoverBackgroundColor: "yellow",
-                pointHoverBorderColor: "blue",
-                pointHoverBorderWidth: 2,
-                pointRadius: 3,
-                pointHitRadius: 10,
-                data: confirmedData,
-                spanGaps: false
-            },
-            {
-                label: "Deaths",
-                fill: false,
-                lineTension: 0.1,
-                backgroundColor: "red",
-                borderColor: "red",
-                borderCapStyle: "butt",
-                borderDash: [],
-                borderDashOffset: 0.0,
-                borderJoinStyle: "miter",
-                pointBorderColor: "red",
-                pointBorderWidth: 1,
-                pointHoverRadius: 8,
-                pointHoverBackgroundColor: "yellow",
-                pointHoverBorderColor: "red",
-                pointHoverBorderWidth: 2,
-                pointRadius: 3,
-                pointHitRadius: 10,
-                data: deathsData,
-                spanGaps: false
-            },
-            {
-                label: "Recovered",
-                fill: false,
-                lineTension: 0.1,
-                backgroundColor: "green",
-                borderColor: "green",
-                borderCapStyle: "butt",
-                borderDash: [],
-                borderDashOffset: 0.0,
-                borderJoinStyle: "miter",
-                pointBorderColor: "green",
-                pointBorderWidth: 1,
-                pointHoverRadius: 8,
-                pointHoverBackgroundColor: "yellow",
-                pointHoverBorderColor: "green",
-                pointHoverBorderWidth: 2,
-                pointRadius: 3,
-                pointHitRadius: 10,
-                data: recoveredData,
-                spanGaps: false
-            }
-        ]
-    };
-
-    const options = {
-        scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Cases',
-                            fontSize: 20 
-                        }
-                    }]            
-                }  
-        };
-    
-    const covidLineChart = new Chart(ctx, {
+    const covidLineChart = new Chart(ctx,{
         type: "line",
-        data: chartJSData,
-        options: options
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: "Confirmed",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(225,0,0,0.4)",
+                    borderColor: "blue",
+                    borderCapStyle: "square",
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: "miter",
+                    pointBorderColor: "blue",
+                    pointBackgroundColor: "blue",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: "yellow",
+                    pointHoverBorderColor: "blue",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 3,
+                    pointHitRadius: 10,
+                    data: confirmedData,
+                    spanGaps: false
+                },
+                {
+                    label: "Deaths",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "red",
+                    borderColor: "red",
+                    borderCapStyle: "butt",
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: "miter",
+                    pointBorderColor: "red",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: "yellow",
+                    pointHoverBorderColor: "red",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 3,
+                    pointHitRadius: 10,
+                    data: deathsData,
+                    spanGaps: false
+                },
+                {
+                    label: "Recovered",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "green",
+                    borderColor: "green",
+                    borderCapStyle: "butt",
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: "miter",
+                    pointBorderColor: "green",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 8,
+                    pointHoverBackgroundColor: "yellow",
+                    pointHoverBorderColor: "green",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 3,
+                    pointHitRadius: 10,
+                    data: recoveredData,
+                    spanGaps: false
+                }
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Cases',
+                        fontSize: 20
+                    }
+                }]
+            }
+        }
     });
 };

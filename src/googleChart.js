@@ -1,4 +1,7 @@
 const drawGoogleChart = (data) => {
+
+    document.getElementById("google-chart").style.display = "block";
+
     google.charts.load('current', {packages: ['corechart', 'line']});
     google.charts.setOnLoadCallback(drawChart);
 
