@@ -21,12 +21,14 @@
                 return response.json();
             })
             .then((data) => {
+                data.sort(sortByCountry("Country"));
                 createOptions(data);
             });
     </script>
 </head>
 <body>
     <h1>COVID-19 Data Charts</h1>
+    <h6>Data source: https://api.covid19api.com/</h6>
     <select name="allCountries" id="allCountries" onchange="createChart()">
         <option></option>
     </select>
